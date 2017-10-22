@@ -1,0 +1,14 @@
+<h1>{{title}}</h1>
+<div class="container">
+  <button class="btn btn-lg btn-info" [class.active]="filterBy=='all'" (click)="filterBy='all'">
+  </button>
+    <button class="btn btn-lg btn-info" [class.active]="filterBy=='sai'" (click)="filterBy='sai'">
+    </button>
+
+
+<ul id="thumbnailsList">
+<li *ngFor="let image of (visibleimages | Imagefilter:filterBy)">
+<img src="{{image.url}}" class="tn" width="200" height="150">
+</li>
+</ul>
+</div>
